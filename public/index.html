@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtofNuel | Ultimate Combat</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+    </style>
+</head>
+<body class="w-full h-screen bg-cover bg-center bg-no-repeat mt-10 font-raleway">
+    <section>
+        <div class="w-full max-w-5xl flex flex-col justify-center items-center space-y-3 mx-auto">
+            <input id="searchInput" class="w-11/12 border-2 border-bkg p-2 px-4 rounded-md outline-none" type="text" placeholder="Who is your Fighter">
+            <button id="getNewHero" class="w-11/12 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Get Random Character</button>
+            <div class="flex w-11/12 space-x-10 justify-between">
+                <button id="search1" class="w-1/2 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Search 1st Character</button>
+                <button id="search2" class="w-1/2 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Search 2nd Character</button>
+            </div>
+        </div>
+    </section>
+    <section class="container flex flex-col justify-center items-center mx-auto">
+        <div class="flex space-x-3 md:space-x-8 p-6 justify-center items-center">
+            <div class="w-1/2 md:w-96">
+                <h2 id="player1Name" class="text-xl tracking-widest text-center"></h2>
+                <img id="player1" src="images/player1.jpg" alt="" class="w-full h-80 object-cover rounded-lg md:h-128">
+                <div id="player1Powerstats" class="w-full bg-bkg text-white mt-3 rounded-md space-y-2 p-3 text-xl"></div>
+            </div>
+            <div class="bg-bkg p-1 rounded-full">
+                <img src="images/sword-fight-svgrepo-com.svg" alt="" class="w-6 md:w-24">
+            </div>
+            <div class="w-1/2 md:w-96">
+                <h2 id="player2Name" class="text-x tracking-widest text-centerl"></h2>
+                <img id="player2" src="images/player2.jpg" alt="" class="w-full h-80 object-cover rounded-lg md:h-128">
+                <div id="player2Powerstats" class="w-full bg-bkg text-white mt-3 rounded-md space-y-2 p-3 text-xl"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/combat.js"></script>
+</body>
+</html>
