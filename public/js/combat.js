@@ -14,6 +14,8 @@ const baseUrl = `https://www.superheroapi.com/api.php/${myToken}`
 //     .then(json => console.log(json))
 
 // Lets set our variables
+let heading = `<h2 class="text-sm text-center underline underline-offeset-8 md:text-lg">CHARACTER STATS</h2>`
+
 let player1 = document.getElementById('player1')
 let player1Name = document.getElementById('player1Name')
 let player1Powerstats = document.getElementById('player1Powerstats')
@@ -35,18 +37,18 @@ const getRandomHero = (id, id2, name) => {
     fetch(`${baseUrl}/${id}`)
     .then(content => content.json())
     .then(json => {
-        // console.log(json)
+        console.log(json)
 
         let stats = getStats(json)
 
         let heroName = json.name
-        player1Name.innerText = heroName
+        player1Name.innerText = heroName.toUpperCase()
 
         let heroImg = json.image.url
         player1.src = `${heroImg}`
 
         let powerstats = json.powerstats
-        player1Powerstats.innerHTML = stats
+        player1Powerstats.innerHTML = `${heading} ${stats}`
     })
     fetch(`${baseUrl}/${id2}`)
     .then(content => content.json())
@@ -54,13 +56,13 @@ const getRandomHero = (id, id2, name) => {
         // console.log(json)
 
         let heroName = json.name
-        player2Name.innerText = heroName
+        player2Name.innerText = heroName.toUpperCase()
 
         let heroImg = json.image.url
         player2.src = `${heroImg}`
 
         let stats = getStats(json)
-        player2Powerstats.innerHTML = stats
+        player2Powerstats.innerHTML = `${heading} ${stats}`
     })
 };
 
@@ -74,13 +76,13 @@ const searchHero1 = (name) => {
         console.log(json)
 
         let heroName = json.results[0].name
-        player1Name.innerText = heroName
+        player1Name.innerText = heroName.toUpperCase()
 
         let heroImg = json.results[0].image.url
         player1.src = `${heroImg}`
 
         let stats = getStats(json.results[0])
-        player1Powerstats.innerHTML = stats
+        player1Powerstats.innerHTML = `${heading} ${stats}`
     })
 }
 
@@ -93,13 +95,13 @@ const searchHero2 = (name) => {
         console.log(json)
 
         let heroName = json.results[0].name
-        player2Name.innerText = heroName
+        player2Name.innerText = heroName.toUpperCase()
 
         let heroImg = json.results[0].image.url
         player2.src = `${heroImg}`
 
         let stats = getStats(json.results[0])
-        player2Powerstats.innerHTML = stats
+        player2Powerstats.innerHTML = `${heading} ${stats}`
     })
 }
 
@@ -108,7 +110,7 @@ const searchHero2 = (name) => {
 const getStats = (hero) => {
     // console.log(Object.keys(hero.powerstats))
     const heroStats = Object.keys(hero.powerstats).map(stat => {
-        return `<h2>${stat}: ${hero.powerstats[stat]}</h2>`
+        return `<h2>${stat.toUpperCase()}: ${hero.powerstats[stat]}</h2>`
     })
     console.log(heroStats)
     return heroStats.join('')

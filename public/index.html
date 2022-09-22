@@ -10,34 +10,57 @@
         @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
     </style>
 </head>
-<body class="w-full h-screen bg-cover bg-center bg-no-repeat mt-10 font-raleway">
-    <section>
-        <div class="w-full max-w-5xl flex flex-col justify-center items-center space-y-3 mx-auto">
-            <input id="searchInput" class="w-11/12 border-2 border-bkg p-2 px-4 rounded-md outline-none" type="text" placeholder="Who is your Fighter">
-            <button id="getNewHero" class="w-11/12 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Get Random Character</button>
-            <div class="flex w-11/12 space-x-10 justify-between">
-                <button id="search1" class="w-1/2 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Search 1st Character</button>
-                <button id="search2" class="w-1/2 border-2 border-bkg p-2 px-4 rounded-md hover:bg-bkg hover:text-white">Search 2nd Character</button>
+<body class="w-full h-screen font-raleway">
+    <div class="flex flex-col p-3 py-10 space-y-3 justify-center items-center text-center text-white bg-bkg md:text-xl">
+        <h1>Character Stats App</h1>
+        <p class="leading-9">Ever wanted to compare stats with other of characters
+            from other universes or production studios?<br>
+            Well Now you can!! Simply search "batman" or "ethan hunt" 
+            and see results!<br class="md:hidden">
+            You can take a gamble with a Random Character, we have 731 to chose from!
+        </p>
+    </div>
+    <div class=" max-w-7xl bg-bkg mx-auto py-16 my-10 rounded-md">
+        <!-- Input Fields -->
+        <section>
+            <div class="w-full max-w-5xl flex flex-col justify-center items-center space-y-3 mx-auto">
+                <input id="searchInput" class="w-11/12 text-bkg border-2 border-white p-2 px-4 rounded-md outline-none" type="text" placeholder="Who is your Fighter">
+                <button id="getNewHero" class="w-11/12 border-2 border-white p-2 px-4 rounded-md bg-white text-bkg hover:text-white hover:bg-transparent">Get Random Character</button>
+                <div class="flex w-11/12 space-x-10 justify-between">
+                    <button id="search1" class="w-1/2 border-2 border-white p-2 px-4 rounded-md bg-white text-bkg hover:text-white hover:bg-transparent">Search 1st Character</button>
+                    <button id="search2" class="w-1/2 border-2 border-white p-2 px-4 rounded-md bg-white text-bkg hover:text-white hover:bg-transparent">Search 2nd Character</button>
+                </div>
             </div>
-        </div>
+        </section>
+        <!-- Character Section -->
+        <section class="container flex flex-col justify-center items-center mx-auto">
+            <div class="flex space-x-3 md:space-x-8 p-6 justify-center items-start">
+                <div class="w-1/2 md:w-96">
+                    <h2 id="player1Name" class="text-md tracking-widest text-center text-bkg py-3 bg-white rounded-t-lg md:text-xl"></h2>
+                    <img id="player1" src="images/player1.jpg" alt="" class="w-full h-80 object-cover rounded-b-lg border-2 border-white md:h-128">
+                    <div id="player1Powerstats" class="w-full bg-white text-bkg mt-3 rounded-md space-y-2 p-3 py-4 text-lg md:text-xl">
+                        <h2 class="text-lg text-center underline underline-offeset-8">CHARACTER STATS</h2>
+                    </div>
+                </div>
+                <div class="bg-white p-1 rounded-full w-6 mt-56 md:w-24">
+                    <img src="images/sword-fight-svgrepo-com.svg" alt="" class="w-6 md:w-24">
+                </div>
+                <div class="w-1/2 md:w-96">
+                    <h2 id="player2Name" class="text-md tracking-widest text-center text-bkg py-3 bg-white rounded-t-lg md:text-xl"></h2>
+                    <img id="player2" src="images/player2.jpg" alt="" class="w-full h-80 object-cover rounded-b-lg border-2 border-white md:h-128">
+                    <div id="player2Powerstats" class="w-full bg-white text-bkg mt-3 rounded-md space-y-2 p-3 py-4 text-lg md:text-xl">
+                        <h2 class="text-center underline underline-offeset-8">CHARACTER STATS</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="container flex space-x-5 justify-center items-center mx-auto mb-10 text-center">
+        <a class="p-4 text-sm rounded-md border-2 border-bkg hover:bg-bkg transition-all ease-in-out hover:duration-300 hover:text-white md:w-32" href="https://github.com/artofnuel">My Github</a>
+        <a class="p-4 text-sm rounded-md border-2 border-bkg hover:bg-bkg transition-all ease-in-out hover:duration-300 hover:text-white md:w-32" href="https://artofnuel.mypixieset.com/">My Website</a>
+        <a class="p-4 text-sm rounded-md border-2 border-bkg hover:bg-bkg transition-all ease-in-out hover:duration-300 hover:text-white md:w-32" href="https://twitter.com/artofnuel">My Twitter</a>
     </section>
-    <section class="container flex flex-col justify-center items-center mx-auto">
-        <div class="flex space-x-3 md:space-x-8 p-6 justify-center items-center">
-            <div class="w-1/2 md:w-96">
-                <h2 id="player1Name" class="text-xl tracking-widest text-center"></h2>
-                <img id="player1" src="images/player1.jpg" alt="" class="w-full h-80 object-cover rounded-lg md:h-128">
-                <div id="player1Powerstats" class="w-full bg-bkg text-white mt-3 rounded-md space-y-2 p-3 text-xl"></div>
-            </div>
-            <div class="bg-bkg p-1 rounded-full w-6 md:w-24 my-auto">
-                <img src="images/sword-fight-svgrepo-com.svg" alt="" class="w-6 md:w-24">
-            </div>
-            <div class="w-1/2 md:w-96">
-                <h2 id="player2Name" class="text-x tracking-widest text-centerl"></h2>
-                <img id="player2" src="images/player2.jpg" alt="" class="w-full h-80 object-cover rounded-lg md:h-128">
-                <div id="player2Powerstats" class="w-full bg-bkg text-white mt-3 rounded-md space-y-2 p-3 text-xl"></div>
-            </div>
-        </div>
-    </section>
+    
     
     <script src="js/combat.js"></script>
 </body>
